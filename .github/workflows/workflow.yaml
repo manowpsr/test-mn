@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   check-bats-version:
-    runs-on: ubuntu-latest
+    runs-on: manow
     steps:
       - name: check server-info
         run: lsb_release -a
@@ -12,12 +12,3 @@ jobs:
         run: ls -la
       - name: display wording
         run: echo hello ${{ github.actor }}
-
-  check-window-version:
-    runs-on: windows-latest
-    steps:
-      - name: check server-info
-        run: systeminfo
-      - name: display wording
-        run: echo hello ${{ github.actor }}
-        # test123
