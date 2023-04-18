@@ -1,8 +1,15 @@
 name: Manow-Workflow
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'input your software version'
+        required: true
+        default: '1.0.0'
+        type: string
+  # push:
+  #   branches:
+  #     - main
 env:
   WORDING: "Pimsiri"
 jobs:
