@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: check github environment
         run: hostname
+
+      - name: create variable
+        run: echo "BUILD_AWGS.prod-1.0.0" >> $GETHUB_ENV
+        
       - name: build application
         run: echo "Hello ${{ env.WORDING }}"
   deploy: 
