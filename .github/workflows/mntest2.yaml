@@ -3,12 +3,17 @@ on:
   push:
     branches:
       - main
+env: 
+  WORDING: "PIMSIRI"
+
 jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
       - name: check github environment
         run: hostname
+      - name: build application
+        run: echo "Hello ${{ env.WORDING }}"
   deploy: 
     runs-on: manow
     steps:
