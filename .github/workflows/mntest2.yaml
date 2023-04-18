@@ -14,10 +14,10 @@ jobs:
         run: hostname
 
       - name: create variable
-        run: echo "BUILD_AWGS.prod-1.0.0" >> $GITHUB_ENV
+        run: echo "BUILD_ARGS=prod-1.0.0" >> $GITHUB_ENV
 
       - name: build application
-        run: echo "Hello ${{ env.WORDING }}"
+        run: echo "Hello ${{ env.WORDING }} by $BUILD_ARGS"
   deploy: 
     runs-on: manow
     steps:
