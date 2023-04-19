@@ -1,0 +1,11 @@
+apiVersion: v1 
+kind: Pod 
+metadata: 
+  name: manow-app 
+  namespace: manow-ns 
+spec: 
+  containers: 
+  - name: manow-app 
+    image: manowpsr/manow:1.2 
+    ports: 
+    - containerPort: 80

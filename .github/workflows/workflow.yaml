@@ -30,4 +30,6 @@ jobs:
         run: minikube start
       - name: create deploy 
         run: | 
-          pwd
+          kubectl create namespace manow-ns
+          kubectl apply -f pod.yaml
+          
