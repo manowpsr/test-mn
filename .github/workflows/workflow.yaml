@@ -21,3 +21,13 @@ jobs:
           cd app
           docker build -t manowpsr/manow:${{ github.event.inputs.version }} .
           docker push manowpsr/manow:${{ github.event.inputs.version }}
+
+  Deploy: 
+    needs: build 
+    runs-on: manow
+    steps: 
+      - name: Minikube start 
+        run: minikube start
+      - name: create deploy 
+        run: | 
+          pwd
