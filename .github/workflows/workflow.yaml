@@ -26,10 +26,7 @@ jobs:
     needs: build 
     runs-on: manow
     steps: 
-      - name: Minikube start 
-        run: minikube start
       - name: create deploy 
         run: | 
-          kubectl create namespace manow-ns
           kubectl apply -f pod.yaml
           
